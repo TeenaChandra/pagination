@@ -17,10 +17,9 @@ axios.get(`${USERS_URL}page=${page}`)
 },[page]);
 
 const setFirst = () => {
+  setPage(0);
   if(!firstbool){
     setFirstBool(true);
-  } else{
-    setPage(0);
   }
 }
 
@@ -32,7 +31,6 @@ const setFirst = () => {
   }
 
   const setNext = () => {
-    console.log('yes i am here')
     if(page !== 4){
       let count = page+1;
       setPage(count);
@@ -54,12 +52,12 @@ const setFirst = () => {
                     <th>Last Name</th>
                 </tr>
             </thead>
-                <tbody data-testid="results">
+                <tbody >
                   {
                     firstbool &&
                     results.map((result, index) => {
                     return(
-                      <tr key={index} data-testid="row">
+                      <tr key={index}>
                         <td>{result.title}</td>
                         <td>{result.url}</td>
                         <td>{result.author}</td>
@@ -77,3 +75,4 @@ const setFirst = () => {
     </div>
     );
 };
+
