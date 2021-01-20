@@ -2,9 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 const USERS_URL = 'https://hn.algolia.com/api/v1/search?query=react&';
-// I do not remember exactly about the count option in the question details
-//Also, I have used fake api url because I was getting CORS when I access the USERS_URL
-// given in the test
+
 export default function App() {
 
   const [results, setresults] = React.useState([]);
